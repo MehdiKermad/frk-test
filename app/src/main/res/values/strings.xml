@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MvvmDi</string>
+    <string name="reviews">%d avis</string>
+    <string name="price_euro">%d€</string>
+    <string name="dish_on_click">Très bon choix</string>
+    <string name="out_of_10">/10</string>
+    <string name="restaurant_card">CARTE DU RESTAURANT</string>
+    <string name="chief_card_preview">Extrait de la carte du chef</string>
+    <string name="updated_on">Mis à jour le </string>
+    <string name="average_price">Prix moyen %d€</string>
+</resources>

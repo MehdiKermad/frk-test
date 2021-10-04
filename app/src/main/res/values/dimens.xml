@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_margin">8dp</dimen>
+    <dimen name="product_name_size">22sp</dimen>
+    <dimen name="separator_height">1dp</dimen>
+    <dimen name="default_padding">8dp</dimen>
+    <dimen name="carousel_height">200dp</dimen>
+    <dimen name="detail_buttons_padding">20dp</dimen>
+</resources>

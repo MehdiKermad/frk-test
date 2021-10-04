@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.detail.DetailActivity">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+            android:id="@+id/imagesProductCarousel"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/carousel_height"
+            app:captionTextSize="20sp"
+            app:imageScaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showNavigationButtons="false" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/backButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginVertical="@dimen/default_margin"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_back"
+            android:tint="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/favButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginVertical="@dimen/default_margin"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_heart"
+            android:tint="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@id/searchButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginVertical="@dimen/default_margin"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_magnify"
+            android:tint="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/specialitiesText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:padding="@dimen/default_padding"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/rateRestaurantText"
+            app:layout_constraintEnd_toStartOf="@id/rateRestaurantText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imagesProductCarousel"
+            tools:text="Français • Branché" />
+
+        <TextView
+            android:id="@+id/rateRestaurantText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:paddingVertical="@dimen/default_padding"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/rateInfoRestaurantText"
+            app:layout_constraintStart_toEndOf="@id/specialitiesText"
+            app:layout_constraintTop_toTopOf="@id/specialitiesText"
+            tools:text="8,8" />
+
+        <TextView
+            android:id="@+id/rateInfoRestaurantText"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="end|bottom"
+            android:paddingVertical="@dimen/default_padding"
+            android:paddingEnd="@dimen/default_padding"
+            android:text="@string/out_of_10"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/rateRestaurantText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/rateRestaurantText"
+            app:layout_constraintTop_toTopOf="@id/rateRestaurantText"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/averagePriceText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/default_padding"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/reviewsPriceText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specialitiesText"
+            tools:text="Prix moyen de 45€" />
+
+        <TextView
+            android:id="@+id/reviewsPriceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/default_padding"
+            android:paddingEnd="@dimen/default_padding"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/averagePriceText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/averagePriceText"
+            app:layout_constraintTop_toTopOf="@id/averagePriceText"
+            tools:ignore="RtlSymmetry"
+            tools:text="43 avis" />
+
+        <View
+            android:id="@+id/separatorView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginVertical="16dp"
+            android:background="@color/separator_color"
+            app:layout_constraintBottom_toTopOf="@id/infoCardPriceText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/averagePriceText" />
+
+        <TextView
+            android:id="@+id/infoCardPriceText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:gravity="start"
+            android:paddingHorizontal="@dimen/default_padding"
+            android:text="@string/restaurant_card"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/lastUpdatePriceText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separatorView" />
+
+        <TextView
+            android:id="@+id/lastUpdatePriceText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="start"
+            android:paddingHorizontal="@dimen/default_padding"
+            android:paddingBottom="@dimen/default_padding"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/infoCardPriceText"
+            tools:text="Mis à jour le 04/07/2017" />
+
+        <TextView
+            android:id="@+id/infoChiefCardText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:gravity="start"
+            android:paddingHorizontal="@dimen/default_padding"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lastUpdatePriceText"
+            tools:text="Extrait de la carte du chef C. Barran" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dishRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/default_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/infoChiefCardText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
